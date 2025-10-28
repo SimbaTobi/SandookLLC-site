@@ -3,133 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sandook LLC — Building products that feel like finding treasure</title>
-  <meta name="description" content="Sandook LLC is a product studio building fast, delightful apps — including RushRanks. Partner with us or pitch your idea." />
-  <meta property="og:title" content="Sandook LLC" />
-  <meta property="og:description" content="A modern product studio. We design, build, and launch apps at startup speed." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0b0b0c" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>Sandook LLC — We build apps.</title>
+  <meta name="description" content="Sandook LLC is a small product studio building apps like RushRanks. Partnerships welcome." />
+  <meta name="theme-color" content="#0b0c0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='12' width='64' height='48' y='8' fill='%23fff'/%3E%3Crect width='56' height='10' x='4' y='14' fill='%23000'/%3E%3C/svg%3E">
 </head>
 <body>
   <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="#home">
+    <div class="wrap nav">
+      <a href="#home" class="brand">
         <img src="assets/logo.svg" alt="Sandook LLC logo" width="28" height="28" />
         <span>Sandook LLC</span>
       </a>
       <nav>
-        <a href="#about">About</a>
         <a href="#products">Products</a>
-        <a href="#approach">Approach</a>
+        <a href="#partners">Partnerships</a>
         <a href="#contact" class="btn btn-outline">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="home">
-    <section class="hero container">
-      <div class="hero-copy">
-        <h1>We build apps that feel like finding <span class="accent">treasure</span>.</h1>
-        <p>Sandook (from “sanduk,” Serbian for treasure chest) is a small, fast product studio. We invent, fund, and ship practical apps—then scale the ones people love.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#products">See what we’re building</a>
-          <a class="btn btn-ghost" href="#contact">Partner with us</a>
+    <section class="section hero">
+      <div class="wrap hero-grid">
+        <div class="copy reveal">
+          <h1>We build apps<span class="dot">.</span></h1>
+          <p>Small team. Fast releases. Useful software.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#products">See our work</a>
+            <a class="btn btn-ghost" href="#partners">Partner with us</a>
+          </div>
         </div>
-      </div>
-      <div class="hero-art">
-        <div class="chest">
-          <div class="lid"></div>
-          <div class="box"></div>
-          <div class="shine"></div>
+        <div class="art reveal">
+          <div class="chest3d" aria-hidden="true">
+            <div class="lid"></div>
+            <div class="base"></div>
+            <div class="glow"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section container">
-      <div class="split">
-        <div>
-          <h2>About Sandook</h2>
-          <p>We’re an independent tech company focused on fast iteration and clean execution. Our stack is lightweight, our taste leans minimal, and our bar for performance is high.</p>
-          <ul class="bullets">
-            <li>Small team, senior craft</li>
-            <li>Design-forward, performance-first</li>
-            <li>Privacy-respectful by default</li>
+    <section id="products" class="section alt">
+      <div class="wrap">
+        <h2 class="reveal">Current product</h2>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card-body">
+              <h3>RushRanks</h3>
+              <p>Daily short‑video leaderboards by U.S. state.</p>
+              <div class="links">
+                <a class="btn btn-small" href="https://www.rushranks.com" target="_blank" rel="noopener">Website</a>
+              </div>
+            </div>
+          </article>
+          <article class="card ghost reveal">
+            <div class="card-body">
+              <h3>New things — always</h3>
+              <p>We ship prototypes, test in the wild, and keep what sticks.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" class="section">
+      <div class="wrap split">
+        <div class="reveal">
+          <h2>Partnerships</h2>
+          <p>Have distribution, IP, or an idea that needs a team? We co‑build with creators, brands, and studios.</p>
+        </div>
+        <div class="reveal">
+          <ul class="pill-list">
+            <li>Prototype to launch</li>
+            <li>White‑label builds</li>
+            <li>Joint ventures</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>What “Sandook” means</h3>
-          <p><em>Sanduk</em> means “treasure chest” in Serbian. We chase that feeling — opening something simple, solid, and unexpectedly useful.</p>
-        </div>
       </div>
     </section>
 
-    <section id="products" class="section container">
-      <h2>Products</h2>
-      <div class="grid">
-        <article class="product">
-          <h3>RushRanks</h3>
-          <p>Daily short‑video leaderboards by U.S. state. Post a Rush, earn likes, and climb the Top 100 before the clock locks.</p>
-          <div class="links">
-            <a class="btn btn-small" href="https://www.rushranks.com" target="_blank" rel="noopener">Website</a>
-            <a class="btn btn-small btn-outline" href="#contact">Press &amp; partnerships</a>
-          </div>
-        </article>
-        <article class="product soon">
-          <h3>Next up</h3>
-          <p>We prototype weekly. New drops will appear here — or contact us below to pitch.</p>
-        </article>
+    <section id="contact" class="section alt">
+      <div class="wrap contact">
+        <h2 class="reveal">Get in touch</h2>
+        <a class="cta-mail reveal" href="mailto:contact@sandookllc.com">contact@sandookllc.com</a>
+        <p class="micro reveal">Mail only: 9620 NE Tanasbourne Dr Ste 329, Hillsboro, OR 97124</p>
       </div>
-    </section>
-
-    <section id="approach" class="section container">
-      <h2>How we work</h2>
-      <div class="pillars">
-        <div class="pillar">
-          <h4>Small & fast</h4>
-          <p>Short cycles, measurable bets, and shipping over slide decks.</p>
-        </div>
-        <div class="pillar">
-          <h4>Craft & clarity</h4>
-          <p>Lean features, crisp copy, and smooth performance on day one.</p>
-        </div>
-        <div class="pillar">
-          <h4>Creator‑friendly</h4>
-          <p>Simple monetization paths and clear ownership terms.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section container">
-      <h2>Contact</h2>
-      <p>Partnerships, press, or pitching an idea? We’d love to hear from you.</p>
-      <div class="contact-cards">
-        <a class="card link" href="mailto:hello@rushranks.com">hello@rushranks.com</a>
-        <a class="card link" href="https://www.rushranks.com" target="_blank" rel="noopener">rushranks.com</a>
-      </div>
-      <p class="micro">Address (mail only): 9620 NE Tanasbourne Dr Ste 329, Hillsboro, OR 97124</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="brand">
-        <img src="assets/logo.svg" alt="" width="22" height="22" />
-        <span>Sandook LLC</span>
-      </div>
-      <nav class="foot-nav">
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#approach">Approach</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="copy micro">© <span id="year"></span> Sandook LLC. All rights reserved.</div>
+    <div class="wrap foot">
+      <span>© <span id="year"></span> Sandook LLC</span>
+      <a href="#home" class="top">Back to top</a>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
