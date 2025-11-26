@@ -28,7 +28,12 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
 .hero .copy p{font-size:18px}
 .dot{color:var(--accent)}
 
-.art{display:flex;align-items:center;justify-content:center}
+/* Center the art in the hero */
+.art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .chest3d {
   position: relative;
   width: min(260px, 60vw);
@@ -44,11 +49,10 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
   height: 100%;
 }
 
-/* Stroke style to match your outline chest icon */
-.chest-svg rect,
-.chest-svg path {
+/* Make the chest outline visible */
+.chest-svg rect {
   fill: none;
-  stroke: var(--chest-stroke);
+  stroke: #d4d4d8;          /* light grey outline */
   stroke-width: 14;
   stroke-linecap: round;
   stroke-linejoin: round;
