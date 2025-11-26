@@ -1,5 +1,5 @@
 :root{
-  --bg:#0b0c0f;--bg-alt:#111218;--fg:#fff;--muted:#aeb2bc;--accent:#c7ff55;--stroke:#1c1f26;--card:#141723
+  --bg:#0b0c0f;--bg-alt:#111218;--fg:#fff;--muted:#aeb2bc;--accent:#c7ff55;--stroke:#d4d4d8;--card:#141723
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
@@ -29,11 +29,44 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
 .dot{color:var(--accent)}
 
 .art{display:flex;align-items:center;justify-content:center}
-.chest3d{position:relative;width:min(420px,92%);height:240px;perspective:900px}
-.chest3d .base{position:absolute;inset:32px 0 0 0;margin:auto;width:86%;height:66%;background:linear-gradient(180deg,#1b2030,#0f121a);border:1px solid var(--stroke);border-radius:16px;box-shadow:inset 0 2px 10px rgba(255,255,255,.05),0 24px 88px rgba(0,0,0,.5)}
-.chest3d .lid{position:absolute;left:7%;right:7%;top:0;height:54px;background:linear-gradient(180deg,#eaeefa,#cfd4e6);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.35);transform-origin:left center;animation:lidfloat 6s ease-in-out infinite}
-.chest3d .glow{position:absolute;left:9%;right:9%;bottom:20%;height:4px;background:linear-gradient(90deg,transparent,rgba(199,255,85,.7),transparent);filter:blur(.5px)}
-@keyframes lidfloat{0%,100%{transform:rotateX(0deg)}50%{transform:rotateX(14deg)}}
+.chest3d {
+  position: relative;
+  width: min(260px, 60vw);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG sizing */
+.chest-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Stroke style to match your outline chest icon */
+.chest-svg rect,
+.chest-svg path {
+  fill: none;
+  stroke: var(--chest-stroke);
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Optional subtle glow under the chest */
+.chest3d::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: -14px;
+  height: 3px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(172, 255, 99, 0.9) 0, transparent 60%);
+  opacity: 0.35;
+  filter: blur(4px);
+}
 
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
 .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;overflow:hidden}
