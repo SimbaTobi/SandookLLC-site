@@ -38,11 +38,11 @@
       </div>
     </div>
 
-  <div class="art reveal">
+ <div class="art reveal">
   <div class="chest3d" aria-hidden="true">
     <svg class="chest-svg" viewBox="0 0 200 200" role="img">
       <defs>
-        <!-- Slight gradient for a more “serious / glossy” stroke -->
+        <!-- Slight gradient stroke for a more “premium” look -->
         <linearGradient id="chestStroke" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#f4f4fb" />
           <stop offset="100%" stop-color="#c4c6d0" />
@@ -54,33 +54,37 @@
          stroke-linecap="round"
          stroke-linejoin="round">
 
-        <!-- Lid -->
+        <!-- Lid (rounded rectangle) -->
         <rect class="chest-lid"
-              x="35" y="28"
-              width="130" height="68"
-              rx="24" ry="24" />
+              x="30" y="22"
+              width="140" height="70"
+              rx="26" ry="26" />
 
-        <!-- Base (slightly angled sides, less “toy-ish”) -->
-        <path class="chest-base"
-              d="M 52 96
-                 H 148
-                 L 140 176
-                 H 60
-                 Z" />
+        <!-- Base (full, solid, less “kiddy”) -->
+        <rect class="chest-base"
+              x="38" y="102"
+              width="124" height="72"
+              rx="20" ry="20" />
+
+        <!-- Separator line between lid and base -->
+        <line class="chest-separator"
+              x1="38" y1="102"
+              x2="162" y2="102" />
 
         <!-- Lock body -->
-        <path class="chest-lock"
-              d="M 95 116
-                 a 10 10 0 0 1 10 -10
-                 a 10 10 0 0 1 10 10
-                 v 20
-                 a 10 10 0 0 1 -10 10
-                 a 10 10 0 0 1 -10 -10
-                 Z" />
+        <rect class="chest-lock"
+              x="88" y="112"
+              width="28" height="36"
+              rx="14" ry="14" />
 
         <!-- Keyhole circle -->
         <circle class="chest-keyhole"
-                cx="105" cy="126" r="4" />
+                cx="102" cy="126" r="4" />
+
+        <!-- Keyhole stem -->
+        <line class="chest-keyhole-stem"
+              x1="102" y1="126"
+              x2="102" y2="135" />
       </g>
     </svg>
   </div>
