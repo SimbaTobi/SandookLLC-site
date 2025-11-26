@@ -34,9 +34,11 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
   align-items: center;
   justify-content: center;
 }
+
+/* Chest container */
 .chest3d {
   position: relative;
-  width: min(260px, 60vw);
+  width: min(320px, 60vw);   /* big, confident icon */
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -49,16 +51,26 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
   height: 100%;
 }
 
-/* Make the chest outline visible */
-.chest-svg rect {
-  fill: none;
-  stroke: #d4d4d8;          /* light grey outline */
-  stroke-width: 14;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* Shared stroke styling */
+.chest-svg .chest-lid,
+.chest-svg .chest-base,
+.chest-svg .chest-lock {
+  stroke-width: 12;          /* thicker, more “serious” */
 }
 
-/* Optional subtle glow under the chest */
+/* Slightly finer stroke for the keyhole detail */
+.chest-svg .chest-keyhole {
+  stroke-width: 6;
+}
+
+/* Optional: very subtle translucent fill to feel more “solid / glossy” */
+.chest-svg .chest-lid,
+.chest-svg .chest-base,
+.chest-svg .chest-lock {
+  fill: rgba(255, 255, 255, 0.03);
+}
+
+/* Existing neon-ish glow under the chest */
 .chest3d::after {
   content: "";
   position: absolute;
