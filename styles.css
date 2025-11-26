@@ -51,26 +51,28 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
   height: 100%;
 }
 
-/* Shared stroke styling */
+/* Main outline thickness */
 .chest-svg .chest-lid,
 .chest-svg .chest-base,
 .chest-svg .chest-lock {
-  stroke-width: 12;          /* thicker, more “serious” */
+  stroke-width: 11;
 }
 
-/* Slightly finer stroke for the keyhole detail */
-.chest-svg .chest-keyhole {
+/* Finer details */
+.chest-svg .chest-separator,
+.chest-svg .chest-keyhole,
+.chest-svg .chest-keyhole-stem {
   stroke-width: 6;
 }
 
-/* Optional: very subtle translucent fill to feel more “solid / glossy” */
+/* Subtle glossy fill so it feels more solid and modern */
 .chest-svg .chest-lid,
 .chest-svg .chest-base,
 .chest-svg .chest-lock {
   fill: rgba(255, 255, 255, 0.03);
 }
 
-/* Existing neon-ish glow under the chest */
+/* Neon-ish glow under the chest (you already had this) */
 .chest3d::after {
   content: "";
   position: absolute;
