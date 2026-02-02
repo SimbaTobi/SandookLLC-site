@@ -5,7 +5,7 @@
   --muted:#aeb2bc;
   --accent:#c7ff55;
   --stroke:#d4d4d8;
-  --card:#141723
+  --card:#141723;
 }
 
 *{box-sizing:border-box}
@@ -16,12 +16,13 @@ html,body{
   background:var(--bg);
   color:var(--fg);
   font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.55
+  line-height:1.55;
 }
 
 img{max-width:100%;display:block}
 a{color:var(--fg);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
 .section{padding:84px 0;border-top:1px solid var(--stroke)}
 .section.alt{background:var(--bg-alt)}
 
@@ -36,7 +37,7 @@ p{margin:0 0 10px;color:var(--muted)}
   z-index:10;
   background:rgba(11,12,15,.65);
   backdrop-filter:saturate(1.4) blur(12px);
-  border-bottom:1px solid var(--stroke)
+  border-bottom:1px solid var(--stroke);
 }
 
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -51,24 +52,25 @@ nav a:hover{color:var(--fg)}
   border-radius:12px;
   padding:12px 16px;
   border:1px solid var(--stroke);
-  transition:.2s ease
+  transition:.2s ease;
 }
 .btn-primary{background:var(--fg);color:#0b0c0f;border-color:transparent;font-weight:700}
 .btn-outline{border-color:var(--fg);color:var(--fg)}
 .btn-ghost{background:transparent}
 .btn-small{padding:8px 12px;border-radius:10px}
 
+/* HERO */
 .hero .hero-grid{
   display:grid;
   grid-template-columns:1.1fr 1fr;
   gap:36px;
   align-items:center;
-  min-height:72vh
+  min-height:72vh;
 }
 .hero .copy p{font-size:18px}
 .dot{color:var(--accent)}
 
-/* ========= HERO ART (MASKED PNG) ========= */
+/* ========= HERO ART (MASKED PNG, SAFE) ========= */
 .art{
   display:flex;
   align-items:center;
@@ -76,7 +78,7 @@ nav a:hover{color:var(--fg)}
   position:relative;
 }
 
-/* Fallback: show the PNG normally */
+/* Always show fallback PNG by default */
 .hero-image{
   width:min(420px, 62vw);
   height:auto;
@@ -84,24 +86,22 @@ nav a:hover{color:var(--fg)}
   background:transparent;
 }
 
-/* Mask version hidden unless supported */
-.hero-logo{
-  display:none;
+/* Mask div hidden unless JS enables it */
+.hero-logo{display:none}
+
+/* When JS confirms mask image loaded, switch to mask mode */
+html.mask-ready .hero-image{display:none}
+html.mask-ready .hero-logo{
+  display:block;
+  width:min(420px, 62vw);
+  aspect-ratio:1/1;
+  background:#fff; /* logo "ink" color */
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.25));
 }
 
-/* If masking is supported, render pure-white logo using the PNG as a mask */
+/* Only apply mask properties in browsers that support it */
 @supports ((-webkit-mask-image: url("assets/hero.png")) or (mask-image: url("assets/hero.png"))) {
-  .hero-image{ display:none; }
-
-  .hero-logo{
-    display:block;
-    width:min(420px, 62vw);
-    aspect-ratio: 1 / 1;
-
-    /* logo color */
-    background:#fff;
-
-    /* Use the PNG as a mask, so only the logo shape shows */
+  html.mask-ready .hero-logo{
     -webkit-mask-image: url("assets/hero.png");
     -webkit-mask-repeat:no-repeat;
     -webkit-mask-position:center;
@@ -111,23 +111,20 @@ nav a:hover{color:var(--fg)}
     mask-repeat:no-repeat;
     mask-position:center;
     mask-size:contain;
-
-    /* optional subtle depth */
-    filter: drop-shadow(0 6px 18px rgba(0,0,0,.25));
   }
 }
 
-/* Push art to right on desktop */
+/* Push art right on desktop */
 @media (min-width: 901px){
   .art{justify-content:flex-end;}
 }
 
-/* ========= CARDS / SECTIONS ========= */
+/* CARDS / SECTIONS */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:16px;
-  margin-top:12px
+  margin-top:12px;
 }
 .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;overflow:hidden}
 .card .card-body{padding:18px}
@@ -149,24 +146,21 @@ nav a:hover{color:var(--fg)}
 .reveal{opacity:0;transform:translateY(18px);transition:all .5s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* ========= RESPONSIVE ========= */
 @media (max-width:900px){
   .hero .hero-grid{
     grid-template-columns:1fr;
     min-height:64vh;
-    text-align:center
+    text-align:center;
   }
   .section{padding:68px 0}
   nav a{margin-left:14px}
 
-  /* stack image above text on mobile */
   .art{
     order:-1;
     margin-bottom:14px;
-    justify-content:center
+    justify-content:center;
   }
 
-  /* scale a bit bigger on mobile */
   .hero-image,
   .hero-logo{
     width:min(360px, 78vw);
