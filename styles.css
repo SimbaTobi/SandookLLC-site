@@ -95,12 +95,13 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
   .hero-image{width:min(520px, 92vw)}
 }
 @media (max-width:560px){
-  .brand img{
-  width:64px;
-  height:64px;
-  transform: scale(1.10);
-  .nav{height:58px}
+  .nav{height:88px}
   .brand span{display:none}
+  .brand img{
+    width:64px;
+    height:64px;
+    transform: scale(1.10);
+  }
   .hero .copy p{font-size:16px}
   .foot{flex-direction:column;gap:6px}
 }
