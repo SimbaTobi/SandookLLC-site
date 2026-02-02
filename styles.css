@@ -31,7 +31,7 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
 .btn-ghost{background:transparent}
 .btn-small{padding:8px 12px;border-radius:10px}
 
-.hero .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;min-height:72vh}
+.hero .hero-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:36px;align-items:center;min-height:72vh}
 .hero .copy p{font-size:18px}
 .dot{color:var(--accent)}
 
