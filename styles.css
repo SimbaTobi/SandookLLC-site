@@ -1,5 +1,5 @@
 :root{
-  --bg:#0b0c0f;--bg-alt:#111218;--fg:#fff;--muted:#aeb2bc;--accent:#c7ff55;--stroke:#d4d4d8;--card:#141723
+  --bg:#1D1D1D;--bg-alt:#111218;--fg:#fff;--muted:#aeb2bc;--accent:#c7ff55;--stroke:#d4d4d8;--card:#141723
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
