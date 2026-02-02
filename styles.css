@@ -23,6 +23,13 @@ p{margin:0 0 10px;color:var(--muted)}
 .site-header{position:sticky;top:0;z-index:10;background:rgba(11,12,15,.65);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--stroke)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+.brand img{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+  opacity:.95;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,.45));
+}
 nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:12px 16px;border:1px solid var(--stroke);transition:.2s ease}
