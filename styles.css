@@ -98,9 +98,9 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
   .nav{height:88px}
   .brand span{display:none}
   .brand img{
-    width:64px;
-    height:64px;
-    transform: scale(1.10);
+    width:48px;
+    height:48px;
+    transform:none;
   }
   .hero .copy p{font-size:16px}
   .foot{flex-direction:column;gap:6px}
