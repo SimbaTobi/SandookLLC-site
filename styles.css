@@ -1,5 +1,11 @@
 :root{
-  --bg:#1D1D1D;--bg-alt:#111218;--fg:#fff;--muted:#aeb2bc;--accent:#c7ff55;--stroke:#d4d4d8;--card:#141723
+  --bg:#1D1D1D;
+  --bg-alt:#111218;
+  --fg:#fff;
+  --muted:#aeb2bc;
+  --accent:#c7ff55;
+  --stroke:#d4d4d8;
+  --card:#141723
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
@@ -24,68 +30,38 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
 .btn-ghost{background:transparent}
 .btn-small{padding:8px 12px;border-radius:10px}
 
-.hero .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;min-height:72vh}
+.hero .hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:36px;
+  align-items:center;
+  min-height:72vh
+}
 .hero .copy p{font-size:18px}
 .dot{color:var(--accent)}
 
-/* Center the art in the hero */
-.art {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* HERO ART (PNG) */
+.art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-/* Chest container */
-.chest3d {
-  position: relative;
-  width: min(320px, 60vw);   /* big, confident icon */
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* The PNG itself */
+.hero-image{
+  width:min(420px, 62vw);   /* adjust this if you want bigger/smaller */
+  height:auto;
+  object-fit:contain;
+  /* prevents any faint halo edges from looking weird */
+  background:transparent;
 }
 
-/* SVG sizing */
-.chest-svg {
-  width: 100%;
-  height: 100%;
+/* If you want it slightly closer to the center on wide screens */
+@media (min-width: 901px){
+  .art{justify-content:flex-end;}
 }
 
-/* Main outline thickness */
-.chest-svg .chest-lid,
-.chest-svg .chest-base,
-.chest-svg .chest-lock {
-  stroke-width: 11;
-}
-
-/* Finer details */
-.chest-svg .chest-separator,
-.chest-svg .chest-keyhole,
-.chest-svg .chest-keyhole-stem {
-  stroke-width: 6;
-}
-
-/* Subtle glossy fill so it feels more solid and modern */
-.chest-svg .chest-lid,
-.chest-svg .chest-base,
-.chest-svg .chest-lock {
-  fill: rgba(255, 255, 255, 0.03);
-}
-
-/* Neon-ish glow under the chest (you already had this) */
-.chest3d::after {
-  content: "";
-  position: absolute;
-  left: 18%;
-  right: 18%;
-  bottom: -14px;
-  height: 3px;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(172, 255, 99, 0.9) 0, transparent 60%);
-  opacity: 0.35;
-  filter: blur(4px);
-}
-
+/* Cards / sections */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
 .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;overflow:hidden}
 .card .card-body{padding:18px}
@@ -107,9 +83,13 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
 .reveal.in{opacity:1;transform:none}
 
 @media (max-width:900px){
-  .hero .hero-grid{grid-template-columns:1fr;min-height:64vh}
+  .hero .hero-grid{grid-template-columns:1fr;min-height:64vh;text-align:center}
   .section{padding:68px 0}
   nav a{margin-left:14px}
+
+  /* stack the image nicely above text on mobile */
+  .art{order:-1;margin-bottom:14px;justify-content:center}
+  .hero-image{width:min(360px, 78vw)}
 }
 @media (max-width:560px){
   .nav{height:58px}
