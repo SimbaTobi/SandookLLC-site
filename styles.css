@@ -5,80 +5,47 @@
   --muted:#aeb2bc;
   --accent:#c7ff55;
   --stroke:#d4d4d8;
-  --card:#141723;
+  --card:#141723
 }
 
 *{box-sizing:border-box}
-
-html,body{
-  margin:0;
-  padding:0;
-  background:var(--bg);
-  color:var(--fg);
-  font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.55;
-}
-
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
 img{max-width:100%;display:block}
 a{color:var(--fg);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-
 .section{padding:84px 0;border-top:1px solid var(--stroke)}
 .section.alt{background:var(--bg-alt)}
-
 h1{font-size:clamp(36px,7vw,64px);line-height:1.05;margin:0 0 10px;font-weight:800}
 h2{font-size:clamp(24px,4.4vw,36px);margin:0 0 12px}
 h3{margin:0 0 6px;font-size:22px}
 p{margin:0 0 10px;color:var(--muted)}
 
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:rgba(11,12,15,.65);
-  backdrop-filter:saturate(1.4) blur(12px);
-  border-bottom:1px solid var(--stroke);
-}
-
+.site-header{position:sticky;top:0;z-index:10;background:rgba(11,12,15,.65);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--stroke)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-nav a{margin-left:16px;color:var(--muted)}
-nav a:hover{color:var(--fg)}
+nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:12px;
-  padding:12px 16px;
-  border:1px solid var(--stroke);
-  transition:.2s ease;
-}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:12px 16px;border:1px solid var(--stroke);transition:.2s ease}
 .btn-primary{background:var(--fg);color:#0b0c0f;border-color:transparent;font-weight:700}
 .btn-outline{border-color:var(--fg);color:var(--fg)}
 .btn-ghost{background:transparent}
 .btn-small{padding:8px 12px;border-radius:10px}
 
-/* HERO */
-.hero .hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:36px;
-  align-items:center;
-  min-height:72vh;
-}
+.hero .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center;min-height:72vh}
 .hero .copy p{font-size:18px}
 .dot{color:var(--accent)}
 
-/* ========= HERO ART (MASKED PNG, SAFE) ========= */
+/* HERO ART */
 .art{
   display:flex;
   align-items:center;
   justify-content:center;
-  position:relative;
 }
 
-/* Always show fallback PNG by default */
+/* If your index still has .hero-logo from the mask attempt, hide it */
+.hero-logo{display:none !important;}
+
+/* Transparent PNG hero */
 .hero-image{
   width:min(420px, 62vw);
   height:auto;
@@ -86,46 +53,11 @@ nav a:hover{color:var(--fg)}
   background:transparent;
 }
 
-/* Mask div hidden unless JS enables it */
-.hero-logo{display:none}
-
-/* When JS confirms mask image loaded, switch to mask mode */
-html.mask-ready .hero-image{display:none}
-html.mask-ready .hero-logo{
-  display:block;
-  width:min(420px, 62vw);
-  aspect-ratio:1/1;
-  background:#fff; /* logo "ink" color */
-  filter: drop-shadow(0 6px 18px rgba(0,0,0,.25));
-}
-
-/* Only apply mask properties in browsers that support it */
-@supports ((-webkit-mask-image: url("assets/hero.png")) or (mask-image: url("assets/hero.png"))) {
-  html.mask-ready .hero-logo{
-    -webkit-mask-image: url("assets/hero.png");
-    -webkit-mask-repeat:no-repeat;
-    -webkit-mask-position:center;
-    -webkit-mask-size:contain;
-
-    mask-image: url("assets/hero.png");
-    mask-repeat:no-repeat;
-    mask-position:center;
-    mask-size:contain;
-  }
-}
-
-/* Push art right on desktop */
 @media (min-width: 901px){
   .art{justify-content:flex-end;}
 }
 
-/* CARDS / SECTIONS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:16px;
-  margin-top:12px;
-}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
 .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;overflow:hidden}
 .card .card-body{padding:18px}
 .card.ghost{opacity:.9}
@@ -140,33 +72,19 @@ html.mask-ready .hero-logo{
 
 .site-footer{border-top:1px solid var(--stroke);padding:20px 0}
 .foot{display:flex;align-items:center;justify-content:space-between}
-.top{color:var(--muted)}
-.top:hover{color:var(--fg)}
+.top{color:var(--muted)}.top:hover{color:var(--fg)}
 
 .reveal{opacity:0;transform:translateY(18px);transition:all .5s ease}
 .reveal.in{opacity:1;transform:none}
 
 @media (max-width:900px){
-  .hero .hero-grid{
-    grid-template-columns:1fr;
-    min-height:64vh;
-    text-align:center;
-  }
+  .hero .hero-grid{grid-template-columns:1fr;min-height:64vh;text-align:center}
   .section{padding:68px 0}
   nav a{margin-left:14px}
 
-  .art{
-    order:-1;
-    margin-bottom:14px;
-    justify-content:center;
-  }
-
-  .hero-image,
-  .hero-logo{
-    width:min(360px, 78vw);
-  }
+  .art{order:-1;margin-bottom:14px;justify-content:center}
+  .hero-image{width:min(360px, 78vw)}
 }
-
 @media (max-width:560px){
   .nav{height:58px}
   .brand span{display:none}
