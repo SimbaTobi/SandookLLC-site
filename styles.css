@@ -102,6 +102,7 @@ nav a{margin-left:16px;color:var(--muted)}nav a:hover{color:var(--fg)}
     height:48px;
     transform:none;
   }
+  nav a{margin-left:12px;font-size:14px}
   .hero .copy p{font-size:16px}
   .foot{flex-direction:column;gap:6px}
 }
