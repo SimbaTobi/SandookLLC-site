@@ -38,18 +38,21 @@
           </div>
         </div>
 
-        <!-- HERO IMAGE (PNG) -->
-        <div class="art reveal">
-          <img
-            class="hero-image"
-            src="assets/hero.png"
-            alt="Sandook logo"
-            width="640"
-            height="640"
-            loading="eager"
-            decoding="async"
-          />
-        </div>
+<div class="art reveal">
+  <!-- Mask-based logo (best) -->
+  <div class="hero-logo" aria-hidden="true"></div>
+
+  <!-- Fallback image (if masking not supported) -->
+  <img
+    class="hero-image"
+    src="assets/hero.png"
+    alt="Sandook logo"
+    width="640"
+    height="640"
+    loading="eager"
+    decoding="async"
+  />
+</div>
       </div>
     </section>
 
